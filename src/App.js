@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Header from "./components/Layout/Header";
 import MealsSummary from "./components/Meals/MealsSummary";
 import MealsList from "./components/Meals/MealsList";
+import CartItem from "./components/Cart/Cart";
 import "./App.css";
 
 const DUMMY_MEALS = [
@@ -34,6 +35,7 @@ const DUMMY_MEALS = [
 function App() {
   return (
     <Fragment>
+      <CartItem />
       <Header />
       <MealsSummary />
       <MealsList items = {DUMMY_MEALS} />

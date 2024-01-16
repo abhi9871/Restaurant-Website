@@ -17,7 +17,7 @@ const MealsList = (props) => {
             <div className="quantity-form d-flex flex-column">
                 <div className="add-order mb-1">
                 <label htmlFor='quantity' className="fw-bold">Amount</label>
-                <input type='text' id="quantity" className="ms-2" />
+                <input type='number' id="quantity" className="ms-2" />
                 </div>
                 <div className="d-flex justify-content-end">
                 <button type="button" className="btn rounded-5 text-white fw-bold px-4">+Add</button>
