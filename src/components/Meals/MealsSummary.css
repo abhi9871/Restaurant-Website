@@ -1,0 +1,11 @@
+.summary {
+    position: relative;
+    margin-top: -10rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .summary .card {
+        width: 100% !important;
+    }
+}
+
