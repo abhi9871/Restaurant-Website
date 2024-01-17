@@ -4,7 +4,7 @@ import HeaderCartButton from './HeaderCartButton';
 import headerImage from '../../assets/meals.jpg';
 import './Header.css';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <React.Fragment>
     <Navbar expand="lg" className="header z-10 sticky-top top-0 left-0 p-3 w-100">
@@ -13,7 +13,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <HeaderCartButton />
+            <HeaderCartButton showCartOnClick = {props.onClickShowCart} />
           </Nav>
         </Navbar.Collapse>
       </Container>

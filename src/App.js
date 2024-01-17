@@ -1,8 +1,8 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Header from "./components/Layout/Header";
 import MealsSummary from "./components/Meals/MealsSummary";
 import MealsList from "./components/Meals/MealsList";
-import CartItem from "./components/Cart/Cart";
+import Cart from "./components/Cart/Cart";
 import "./App.css";
 
 const DUMMY_MEALS = [
@@ -32,11 +32,18 @@ const DUMMY_MEALS = [
   },
 ];
 
-function App() {
+const App = () => {
+  const [showCart, setShowCart] = useState(false);
+
+  const showCartHandler = () => setShowCart(true);;
+
+  const hideCartHandler = () => setShowCart(false);
+
+
   return (
     <Fragment>
-      <CartItem />
-      <Header />
+      {showCart && <Cart onClickHideCart = {hideCartHandler} />}
+      <Header onClickShowCart = {showCartHandler} />
       <MealsSummary />
       <MealsList items = {DUMMY_MEALS} />
     </Fragment>
