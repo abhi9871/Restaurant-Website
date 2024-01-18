@@ -1,0 +1,17 @@
+.quantity-form {
+    margin-left: auto;
+}
+
+.quantity-form .add-order input {
+    height: 20px;
+    width: 40px;
+}
+
+.quantity-form button {
+    background-color: #8a2b06;
+    font-size: small;
+}
+
+.quantity-form button:hover {
+    background-color: #be3b07;
+}
