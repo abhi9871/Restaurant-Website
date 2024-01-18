@@ -26,15 +26,35 @@ const CartProvider = (props) => {
         return totalAmount;
     }
 
-    // const removeItemFromCartHandler = () => {
-        
-    // }
+    const removeItemFromCartHandler = (id) => {
+        setMeals((prevMeals) => {
+            const existingItemIndex = prevMeals.findIndex((meal) => meal.id === id);
+            const updatedItem = [...prevMeals];
+            if(updatedItem[existingItemIndex].amount === 1){
+                updatedItem.splice(existingItemIndex, 1);
+            }
+            else{
+                updatedItem[existingItemIndex].amount -= 1;
+            }
+            return updatedItem;
+        });
+    }
+
+    const increasedQuantityIntoCartHandler = (id) => {
+        setMeals((prevMeals) => {
+            const existingItemIndex = prevMeals.findIndex((meal) => meal.id === id);
+            const updatedItem = [...prevMeals];
+            updatedItem[existingItemIndex].amount += 1;
+            return updatedItem;
+        })
+    }
 
     const cartContext = {
         items: meals,
         totalAmount: totalAmountHandler(meals),
-        addItem: addItemToCartHandler
-        // removeItem: removeItemFromCartHandler
+        addItem: addItemToCartHandler,
+        removeItem: removeItemFromCartHandler,
+        increasedQuantity: increasedQuantityIntoCartHandler
     };
 
     return (

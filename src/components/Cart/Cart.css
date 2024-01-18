@@ -31,6 +31,11 @@
     width: 50%;
   }
 
+  button.cart-btn:hover {
+    background-color: #aa3b0f !important;
+    color: white !important;
+  }
+
   @media screen and (max-width: 768px) {
     .custom-card-container {
         width: 100%;
